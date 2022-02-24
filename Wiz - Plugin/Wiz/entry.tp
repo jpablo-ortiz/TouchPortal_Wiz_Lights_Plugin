@@ -1,0 +1,126 @@
+{
+    "sdk": 3,
+    "version": 100,
+    "name": "Wiz Plugin",
+    "id": "tp.plugin.wiz",
+    "configuration": {
+        "colorDark": "#25274c",
+        "colorLight": "#707ab5"
+    },
+    "plugin_start_cmd": "\"%TP_PLUGIN_FOLDER%Wiz\\wiz.exe\"",
+    "categories": [
+        {
+            "id": "tp.plugin.wiz.main",
+            "name": "Wiz",
+            "actions": [
+                {
+                    "id": "tp.plugin.wiz.act.turn_on_light",
+                    "name": "Prender Luz",
+                    "prefix": "Wiz",
+                    "type": "communicate",
+                    "format": "Prender la luz con ip: {$tp.plugin.wiz.act.turn_on_light.data.light$}",
+                    "tryInline": true,
+                    "data": [
+                        {
+                            "id": "tp.plugin.wiz.act.turn_on_light.data.light",
+                            "type": "text",
+                            "label": "IP Luz",
+                            "default": ""
+                        }
+                    ]
+                },
+                {
+                    "id": "tp.plugin.wiz.act.turn_off_light",
+                    "name": "Apagar Luz",
+                    "prefix": "Wiz",
+                    "type": "communicate",
+                    "format": "Apagar la luz con ip: {$tp.plugin.wiz.act.turn_off_light.data.light$}",
+                    "tryInline": true,
+                    "data": [
+                        {
+                            "id": "tp.plugin.wiz.act.turn_off_light.data.light",
+                            "type": "text",
+                            "label": "IP Luz",
+                            "default": ""
+                        }
+                    ]
+                },
+                {
+                    "id": "tp.plugin.wiz.act.brightness",
+                    "name": "Ajustar Brillo",
+                    "prefix": "Wiz",
+                    "type": "communicate",
+                    "format": "Ajustar brillo de la luz con ip: {$tp.plugin.wiz.act.brightness.data.light$} al {$tp.plugin.wiz.act.brightness.data.brightness$}% (1-100%)",
+                    "tryInline": true,
+                    "data": [
+                        {
+                            "id": "tp.plugin.wiz.act.brightness.data.light",
+                            "type": "text",
+                            "label": "IP Luz",
+                            "default": ""
+                        },
+                        {
+                            "id": "tp.plugin.wiz.act.brightness.data.brightness",
+                            "type": "text",
+                            "label": "Brillo",
+                            "default": ""
+                        }
+                    ]
+                }
+            ],
+            "states": [
+                {
+                    "id": "tp.plugin.wiz.state.light1",
+                    "type": "text",
+                    "desc": "IP Light 1",
+                    "default": "192.168.1.102"
+                },
+                {
+                    "id": "tp.plugin.wiz.state.light2",
+                    "type": "text",
+                    "desc": "IP Light 2",
+                    "default": ""
+                },
+                {
+                    "id": "tp.plugin.wiz.state.light3",
+                    "type": "text",
+                    "desc": "IP Light 3",
+                    "default": ""
+                },
+                {
+                    "id": "tp.plugin.wiz.state.light4",
+                    "type": "text",
+                    "desc": "IP Light 4",
+                    "default": ""
+                }
+            ],
+            "events": []
+        }
+    ],
+    "settings": [
+        {
+            "name": "IP Light #1",
+            "type": "text",
+            "default": "192.168.1.102",
+            "readOnly": false
+        },
+        {
+            "name": "IP Light #2",
+            "type": "text",
+            "default": "",
+            "readOnly": false
+        },
+        {
+            "name": "IP Light #3",
+            "type": "text",
+            "default": "",
+            "readOnly": false
+        },
+        {
+            "name": "IP Light #4",
+            "type": "text",
+            "default": "",
+            "readOnly": false
+        }
+    ]
+}
